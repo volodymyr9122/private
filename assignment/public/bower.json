@@ -1,0 +1,27 @@
+{
+  "name": "assignment front-end",
+  "authors": [
+    "Vova M"
+  ],
+  "description": "modules required for front-end",
+  "main": "app.js",
+  "keywords": [
+    "spa"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.4",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "angular-route": "^1.6.4",
+    "angular-ui-router": "^1.0.3"
+  }
+}
