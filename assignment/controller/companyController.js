@@ -7,16 +7,12 @@ const Company = require('../model/company');
 exports.all_companies = ((req, res, next) => {
 
     Company.find({})
-        .then((company_list, err) => {
-            if (err) {
-                return next({
-                    err,
-                    statusCode: 500
-                });
-            }
-            return res.send(company_list);
-        });
+        .then(company_list=>res.json(company_list))
+        .catch(err=>console.log(err))
 });
+
+
+
 
 // Display definite  company
 exports.company = ((req, res, next) => {
@@ -24,21 +20,8 @@ exports.company = ((req, res, next) => {
     Company.findById({
             _id: req.params.id
         })
-        .then((company, err) => {
-            if (!company) {
-                res.statusCode = 404;
-                return res.send({ error: 'Not found' })
-            } 
-         else if (!err) {
-                return res.send(company);
-            } else {
-                log.error('Internal error(%d): %s', res.statusCode, err.message);
-                return next({
-                    err,
-                    statusCode: 500
-                });
-            }
-        });
+        .then(company_list=>res.json(company_list))
+        .catch(err=>console.log(err))
 });
 
 
@@ -82,11 +65,13 @@ exports.company_update = ((req, res, next) => {
                 res.statusCode = 404;
                 return res.send({ error: 'Not found' })
             }
-
-            company.name = req.body.name,
+      if(req.body.name!==req.body.childCompanies){
+          company.name = req.body.name,
             company.earnings = req.body.earnings,
-            company.parentCompany = req.body.parentCompany
+            company.childCompanies = req.body.childCompanies
 
+         }
+           
             company.save((err) => {
                 if (!err) {
                     log.info("company updated");

@@ -1,4 +1,23 @@
 angular.module('catalogApp')
+/*.filter('startsWithLetter', function () {
+    return function (items, letter) {
+        let filtered = [];
+       
+        for (let i in items) {
+            let item = items[i];
+            if (item._id!==letter.ob_id) {
+              filtered.push(item);
+             }
+        }
+        
+        return filtered;
+    };
+})*/
+  /*console.log(item.name);
+                console.log(letter.name);*/
+  
+/*   console.log(item.name);
+            console.log(item.childCompanies);*/
     .factory('editService', ['$http', function($http) {
         return {
             getTaskById : function(taskId) {

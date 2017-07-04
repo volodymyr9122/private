@@ -2,22 +2,26 @@
 
     <div class="col-sm-12 col-sm-offset-2 col-sm-8">
         <h3 class="">Add new company</h3>
-       <form>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input ng-model="add.name" type="text" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="desk">Estimated Earnings</label>
-            <input ng-model="add.earnings.annualEarnings"  class="form-control">
-          </div>
-          
-        
-          <button ng-click="add.addTask()" type="submit" class="btn btn-success">Create</button>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input ng-model="add.name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="desk">Estimated Earnings</label>
+                <input ng-model="add.earnings" class="form-control">
+            </div>
+  <label for="childCompany">Choose child company</label>
+            <select id="childCompany" class="form-control input-sm" ng-model="add.childCompanies">
+ <option value="">---Select child company---</option>
+  <option ng-repeat="task in add.tasks" value="{{task._id}}">{{task.name}}</option>
+</select>
+
+            <button ng-click="add.addTask()" type="submit" class="btn btn-success">Create</button>
         </form>
         &nbsp;
     </div>
-    
 
-    
+
+
 </div>

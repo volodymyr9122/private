@@ -1,4 +1,5 @@
-<div class="row">
+<div  class="container-fluid">
+   <div class="row">
     <div class="col-sm-9">
        
        <div class="row" ng-show="lst.msg">
@@ -8,7 +9,7 @@
         </div>
        
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-xs-2 col-sm-10">
                 <a ui-sref="add" type="button" class="btn btn-success pull-right">Add new company +</a>
             </div>
         </div>
@@ -16,10 +17,15 @@
         
     </div>
     
-    
-    <div class="col-sm-3">
+  <div class="row">
+       <div class=" col-xs-10 col-sm-8">
        <div class="stats" ui-view="columnTwo"></div> 
     </div>
+  </div>  
+   
 
     
+</div>
+
+
 </div>

@@ -1,5 +1,5 @@
 angular.module('catalogApp')
-    .factory('taskListService', ['$http',function($http) {
+    .factory('taskListService', ['$http', function($http) {
     
         return {
             getTaskList : function() {

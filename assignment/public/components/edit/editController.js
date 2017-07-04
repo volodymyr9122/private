@@ -1,14 +1,19 @@
 angular.module('catalogApp')
-    .controller('editController', ['$state','editService', function ($state, editService) {
+    .controller('editController', ['$state','editService','tasks', function ($state, editService,tasks) {
     
     var vm = this;
     var taskId = null;
+     vm.tasks = tasks;    
+      console.log(tasks); 
+ 
         
     editService.getTaskById($state.params.id).then(function(data){
             if(data) {
                 taskId = data._id;
+                vm.ob_id = data._id,
                 vm.name = data.name,
-                vm.earnings= data.earnings.map((element)=>element.annualEarnings)
+                vm.earnings = data.earnings,
+                vm.childCompanies = data.childCompanies
             }
         });
     
@@ -16,9 +21,8 @@ angular.module('catalogApp')
         var task = {
             id: taskId,
             name: vm.name,
-            earnings:[{
-                annualEarnings:vm.earnings
-            }]
+            earnings:vm.earnings,
+            childCompanies:vm.childCompanies
         }
      editService.editTask(task).then(function(data){
             if(data){
@@ -32,9 +36,7 @@ angular.module('catalogApp')
             id: taskId,
             name : vm.name,
             earnings:vm.earnings,
-            if( childCompanies){
-            vm.childCompanies  = data.childCompanies.name;
-            }
+           childCompanies:vm.childCompanies
         }
         editService.deleteTask(taskId).then(function(data){
             if(data) {

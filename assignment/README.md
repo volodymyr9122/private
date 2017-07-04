@@ -9,4 +9,6 @@ Open URL http://localhost:8000/#!/list
 
 //
 Back-end working completely  (tested via Postman CRUD operations, companies tree)
-Front-end working partially (not supported companies tree, adding child company, multiple annual earnings for company and issue with updating company name)
+Front-end issues:
+ 1.Can't update child company
+ 2.Can't count sum of all children's companies

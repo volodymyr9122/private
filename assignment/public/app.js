@@ -17,6 +17,12 @@ config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: 'partials/list/full-list.html',
                     controllerAs: "fl",
                     controller: 'fullListController'
+                },
+                
+                'columnTwo@list': { 
+                    templateUrl: 'partials/list/categoryTree.html',
+                    controllerAs: "fl",
+                    controller: 'fullListController'
                 }
             },
             resolve: {
@@ -31,14 +37,25 @@ config(function($stateProvider, $urlRouterProvider) {
             url: '/add',
             templateUrl: 'partials/add/add.html',
             controllerAs: "add",
-            controller: 'addController'
-        })
+            controller: 'addController',
+            resolve: {
+                tasks: ['taskListService', function (taskListService) {
+                    return taskListService.getTaskList();
+                }]
+            }})
     
         .state('edit', {
             url: '/edit/:id',
             templateUrl: 'partials/edit/edit.html',
             controllerAs: "edit",
-            controller: 'editController'
-        });
-        
+            controller: 'editController',
+            resolve: {
+                tasks: ['taskListService', function (taskListService) {
+                    return taskListService.getTaskList();
+                }]
+            }})
+
+
+
+
 });

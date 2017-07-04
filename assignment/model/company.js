@@ -2,19 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const Earnings = Schema({
+/*const Earnings = Schema({
    annualEarnings:{
        type:Number,
        min: 0, 
        required:true
    }
-});
+});*/
 
 
 const CompanySchema = new Schema({
     name: {type: String, required: true},
-    earnings:[Earnings],
-    childCompanies:  {type: Schema.ObjectId, ref: 'Company'}
+    earnings:/*[Earnings]*/{type: Number, required: true},
+    childCompanies:  [{type: Schema.ObjectId, ref: 'Company'}]
 });
 
 

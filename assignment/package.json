@@ -4,7 +4,7 @@
   "description": "ElifTech Test Assignment",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,9 @@
     "express": "^4.15.3",
     "log": "^1.4.0",
     "mongoose": "^4.10.4"
-  }
+  },
+    "engines":{
+        "node":"7.0.0",
+        "npm":"5.0.3"
+    }
 }

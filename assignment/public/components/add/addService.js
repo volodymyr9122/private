@@ -10,7 +10,8 @@ angular.module('catalogApp')
                     function(response){
                         console.log('Server error');
                     });
-            }
+            },
+
         };
     
 }]);
