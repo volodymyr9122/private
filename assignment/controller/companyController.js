@@ -37,6 +37,7 @@ exports.add_company = ((req, res, next) => {
 
     company.save((err) => {
         if (!err) {
+            res.statusCode = 201;
             log.info("new company created");
             return res.send(company);
         } else {
@@ -65,14 +66,13 @@ exports.company_update = ((req, res, next) => {
                 res.statusCode = 404;
                 return res.send({ error: 'Not found' })
             }
-      if(req.body.name!==req.body.childCompanies){
+      if(req.body){
           company.name = req.body.name,
             company.earnings = req.body.earnings,
             company.childCompanies = req.body.childCompanies
 
          }
-           
-            company.save((err) => {
+           company.save((err) => {
                 if (!err) {
                     log.info("company updated");
                     res.statusCode = 200;
@@ -108,7 +108,7 @@ exports.company_delete = ((req, res, next) => {
             company.remove((err) => {
                 if (!err) {
                     log.info("company removed");
-                    res.statusCode = 200;
+                    res.statusCode = 204;
                     return res.send({status: 'OK'});
                 } else {
                     res.statusCode = 500;
@@ -118,3 +118,9 @@ exports.company_delete = ((req, res, next) => {
             });
         });
 });
+
+exports.register = ((req,res) => {
+    res.send({
+        message: `User ${req.body.email} was registered`
+    })
+})

@@ -15,6 +15,8 @@ router.put('/companies/:id', company_controller.company_update);
 
 router.delete('/companies/:id', company_controller.company_delete);
 
+router.post('/register', company_controller.register);
+
 /*router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });*/
