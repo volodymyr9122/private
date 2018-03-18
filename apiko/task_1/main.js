@@ -24,8 +24,7 @@ const fetchUsers = async (URLreq) => {
     <p>${post.email ? `Email: "${post.email}"` : ``}</p>
     <p>${post.body}</p>
   `).join('')
-
-        $('#result').innerHTML = template
+     $('#result').innerHTML = template
     } catch (err) {
         console.log(err)
     }
@@ -41,4 +40,3 @@ $('#result').onclick = (e) => {
   }
     e.preventDefault()
 }
-
