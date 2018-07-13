@@ -1,0 +1,74 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+$bg-color: #1d1e22;
+$line-color:rgba(225, 225, 225, 0.6);
+$inputTextColor:rgba(225, 225, 225, 1);
+%inputProp-shared {
+    background: url("../assets/Shape.png") no-repeat 0px 12px;
+    color: $inputTextColor;
+}
+
+body,
+input {
+    background: $bg-color;
+}
+
+body {
+    background-image: url("../assets/Oval.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 40% 90%;
+}
+
+.line-accross {
+    background: $line-color;
+    margin-top: 1%;
+    height: 1px;
+    width: 100%;
+}
+
+.form-control {
+    @extend %inputProp-shared;
+    margin-top: 3em;
+    padding: 0px 0px 6px 40px;
+    border-color: $line-color;
+}
+
+.form-control:focus {
+    @extend %inputProp-shared;
+}
+
+img {
+    position: relative;
+    max-width: 0px;
+}
+
+.popup {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 10%;
+    transition-duration: 5s;
+}
+
+.slideInUp {
+    animation: nudge 5s linear alternate;
+}
+
+
+@keyframes nudge {
+    0% {
+        transform: translate(0, -200);
+    }
+
+    50% {
+        transform: translate( 0, -100px);
+    }
+
+    80% {
+        transform: translate( 0, -50px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+
+}

@@ -1,0 +1,9 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+
+$base-font: 'Verdana';
+$font-size-input: 30px;
+
+input[type=search] {
+ font-family: $base-font;
+ font-size: $font-size-input;
+}

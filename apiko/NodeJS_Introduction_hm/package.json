@@ -1,0 +1,22 @@
+{
+  "name": "NodeJS_Introduction_hm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/maps": "^0.4.6",
+    "dark-sky": "^1.1.4",
+    "dotenv": "^6.0.0",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
